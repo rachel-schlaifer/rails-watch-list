@@ -2,6 +2,9 @@
 <div>
   <ul>
   <% @lists.each do |list| %>
+    <% if list.thumbnail.attached? %>
+      <%= cl_image_tag list.thumbnail.key, height: 100, width: 100, crop: :fill  %>
+    <% end %>
     <li> <%= list.name %> <%= link_to "View List", list_path(list) %> </li>
   <% end %>
   </ul>

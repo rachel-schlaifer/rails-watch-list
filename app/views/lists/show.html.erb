@@ -1,4 +1,7 @@
 <h1><%= @list.name %></h1>
+<% if @list.thumbnail.attached? %>
+      <%= cl_image_tag @list.thumbnail.key, height: 300, width: 200, crop: :fill  %>
+    <% end %>
 <% @bookmarks = @list.bookmarks %>
 
 <div>
@@ -10,3 +13,7 @@
 
 <%= link_to "Back to Home", root_path %>
 <%= link_to "Add a Movie", new_list_bookmark_path(@list) %>
+<%= link_to "Delete",
+  list_path(@list),
+  data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
+%>
