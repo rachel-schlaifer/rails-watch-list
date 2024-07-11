@@ -6,16 +6,17 @@
 <% end %>
 <% @bookmarks = @list.bookmarks %>
 
+<h2>Movie Titles</h2>
 <div>
   <% @bookmarks.each do | bookmark | %>
-  <%= bookmark.movie.title %>
-  <%= bookmark.comment %>
+  <div>Title: <%= bookmark.movie.title %></div>
+  <div>Bookmark: <%= bookmark.comment %></div>
   <% end %>
 </div>
 
-<%= link_to "Back to Home", root_path %>
-<%= link_to "Add a Movie", new_list_bookmark_path(@list) %>
-<%= link_to "Delete",
-  list_path(@list),
+<div class="m-3"><%= link_to "Back to Home", root_path, class: "btn btn-primary" %></div>
+<div class="m-3"><%= link_to "Add a Movie", new_list_bookmark_path(@list), class: "btn btn-primary" %></div>
+<div class="m-3"><%= link_to "Delete",
+  list_path(@list), class: "btn btn-primary",
   data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
-%>
+%></div>

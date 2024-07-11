@@ -1,20 +1,19 @@
-<h1>My Movie Watchlist</h1>
-<div>
-  <ul>
-  <% @lists.each do |list| %>
-    <% if list.thumbnail.attached? %>
-      <%= cl_image_tag list.thumbnail.key, height: 100, width: 100, crop: :fill  %>
-    <% end %>
-    <li> <%= list.name %> <%= link_to "View List", list_path(list) %> </li>
-  <% end %>
-  </ul>
-</div>
-<%= link_to "Add a List", new_list_path %>
-
-<div class="cards">
-  <% @lists.each do |list| %>
-  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<% if list.thumbnail.attached? %><%= cl_image_path list.thumbnail.key %><% end %>)">
-     <%= list.name %> <%= link_to "View List", list_path(list) %>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= asset_path 'banner.jpeg' %>);">
+  <div class="container">
+    <h1>My Movie Watchlist</h1>
+    <p>What would you like to watch today?</p>
   </div>
-  <% end %>
 </div>
+
+
+<div class="container">
+  <div class="cards">
+    <% @lists.each do |list| %>
+    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<% if list.thumbnail.attached? %><%= cl_image_path list.thumbnail.key %><% else %><%= image_path 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTPQDYau3Hs4-xw1i8jVSUY4BlF4FLmg8lQqg&usqp=CAU' %><% end %>)">
+      <p><%= link_to "#{list.name}", list_path(list), style: "color: white;" %></p>
+    </div>
+    <% end %>
+  </div>
+</div>
+
+<div class="m-3 text-center"><%= link_to "Add a List", new_list_path, class: "btn-lg btn btn-primary" %></div>
