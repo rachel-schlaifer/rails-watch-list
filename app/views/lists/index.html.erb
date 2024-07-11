@@ -10,3 +10,11 @@
   </ul>
 </div>
 <%= link_to "Add a List", new_list_path %>
+
+<div class="cards">
+  <% @lists.each do |list| %>
+  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<% if list.thumbnail.attached? %><%= cl_image_path list.thumbnail.key %><% end %>)">
+     <%= list.name %> <%= link_to "View List", list_path(list) %>
+  </div>
+  <% end %>
+</div>
