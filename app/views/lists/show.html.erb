@@ -1,7 +1,9 @@
 <h1><%= @list.name %></h1>
 <% if @list.thumbnail.attached? %>
-      <%= cl_image_tag @list.thumbnail.key, height: 300, width: 200, crop: :fill  %>
-    <% end %>
+  <%= cl_image_tag @list.thumbnail.key, height: 100, width: 100, crop: :fill %>
+<% else %>
+  <%= image_tag 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTPQDYau3Hs4-xw1i8jVSUY4BlF4FLmg8lQqg&usqp=CAU' %>
+<% end %>
 <% @bookmarks = @list.bookmarks %>
 
 <div>
