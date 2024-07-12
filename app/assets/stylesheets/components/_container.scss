@@ -1,4 +1,9 @@
 .container {
   justify-content: center;
   align-items: center;
+  background-color: #f0f0f0be; /* Light gray background */
+  border: 8px solid #d3d3d3; /* Solid gray border */
+  padding: 20px; /* Optional: Adds some space inside the container */
+  margin: 0 auto; /* Optional: Adds some space outside the container */
+  width: 100%;
 }

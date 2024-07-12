@@ -1,21 +1,31 @@
 .banner {
   background-size: cover;
   background-position: center;
-  padding: 150px 0;
+  padding: 125px 0;
   margin-bottom: 50px;
+  .container {
+    width: fit-content;
+    background-color: black;
+    margin-left: 20px;
+    opacity: 80%;
+    h1 {
+      opacity: 100%;
+    }
+  }
 }
 
 .banner h1 {
   margin: 0;
-  color: white;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-  font-size: 32px;
+  font-size: 48px;
+  color: #FFF;
+  text-shadow: 0 0 10px #FFF, 0 0 20px #FFF, 0 0 30px #d8d869, 0 0 40px #d8d869, 0 0 50px #d8d869, 0 0 60px #d8d869, 0 0 70px #d8d869;
   font-weight: bold;
 }
 
 .banner p {
   font-size: 20px;
   color: white;
-  opacity: .7;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  opacity: 1;
+  text-shadow: 0 0 10px #FFF, 0 0 20px #FFF, 0 0 30px #E60073, 0 0 40px #E60073, 0 0 50px #E60073, 0 0 60px #E60073, 0 0 70px #E60073;
+  font-weight: bold;text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
 }
